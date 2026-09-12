@@ -1,6 +1,6 @@
-# STEP — Academia–Industry Collaboration Portal
+# STEP — Student Talent & Enterprise Portal
 
-**STEP** (Skill, Training & Engagement Portal) is a Smart India Hackathon (SIH) project — a centralized platform connecting **Students**, **Industry Partners**, **Academicians**, and **Institutions**.
+**STEP** (Student Talent & Enterprise Portal) is a Smart India Hackathon (SIH) project — a centralized platform connecting **Students**, **Industry Partners**, **Academicians**, and **Institutions**.
 
 ## Core Features
 

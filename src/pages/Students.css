@@ -1,0 +1,164 @@
+.students-page {
+  position: relative;
+  min-height: 100vh;
+  padding-top: 120px;
+}
+
+.students-hero {
+  text-align: center;
+  padding: 80px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.app-showcase {
+  padding: 40px 24px 80px;
+}
+
+.showcase-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  padding: 64px;
+  border-radius: 32px;
+  align-items: center;
+}
+
+.showcase-content h2 {
+  font-size: clamp(32px, 4vw, 48px);
+  margin-bottom: 24px;
+  line-height: 1.2;
+}
+
+.showcase-content p {
+  font-size: 18px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+.store-buttons {
+  display: flex;
+  gap: 16px;
+}
+
+.store-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+  transition: var(--transition-normal);
+}
+
+.store-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-glow);
+}
+
+/* Phone Mockup */
+.showcase-visual {
+  display: flex;
+  justify-content: center;
+}
+
+.phone-mockup {
+  width: 300px;
+  height: 600px;
+  border-radius: 40px;
+  border: 8px solid rgba(255, 255, 255, 0.1);
+  background: var(--bg-primary);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), var(--shadow-glow-secondary);
+}
+
+.phone-notch {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 24px;
+  background: rgba(255, 255, 255, 0.1);
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  z-index: 10;
+}
+
+.phone-screen {
+  padding: 40px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  height: 100%;
+}
+
+.mockup-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.mockup-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--secondary), var(--primary));
+}
+
+.mockup-title {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.mockup-card {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  padding: 16px;
+  border-radius: 16px;
+}
+
+.mockup-tag {
+  font-size: 14px;
+  color: var(--secondary);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.mockup-company {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.student-features {
+  padding: 80px 24px;
+  text-align: center;
+}
+
+@media (max-width: 992px) {
+  .showcase-grid {
+    grid-template-columns: 1fr;
+    padding: 40px 24px;
+    text-align: center;
+  }
+  
+  .store-buttons {
+    justify-content: center;
+  }
+  
+  .showcase-content p {
+    margin: 0 auto 40px;
+  }
+}
+
+@media (max-width: 576px) {
+  .store-buttons {
+    flex-direction: column;
+  }
+}

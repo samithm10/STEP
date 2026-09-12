@@ -23,7 +23,7 @@ const AiChat = () => {
     {
       id: '1',
       role: 'ai',
-      content: 'Hello! I am STEP AI, your personal career assistant. I can help you find jobs, write a cover letter, prepare for interviews, or explore AI career paths. How can I help you today?',
+      content: 'Hello! I am STEP AI, your Academia–Industry Collaboration assistant. I can help students find internships and identify skill gaps, help academicians discover FDPs and research collaboration opportunities, and help industry partners post opportunities and find the right talent. How can I help you today?',
       timestamp: new Date()
     }
   ]);
@@ -57,7 +57,7 @@ const AiChat = () => {
       try {
         const completion = await groq.chat.completions.create({
           messages: [
-            { role: 'system' as const, content: 'You are STEP AI, a helpful career assistant guiding users in the AI economy.' },
+            { role: 'system' as const, content: 'You are STEP AI, a helpful assistant for the STEP Academia–Industry Collaboration Portal. You help students find internships, live projects, and identify skill gaps. You help academicians find Faculty Development Programs (FDPs), consultancy, and research collaboration opportunities. You help industry partners post internships, live projects, and learning programs. Always respond in the context of the SIH Academia–Industry Collaboration Portal.' },
             ...messages.map(m => ({ 
               role: (m.role === 'ai' ? 'assistant' : 'user') as 'assistant' | 'user', 
               content: m.content 
@@ -103,7 +103,7 @@ const AiChat = () => {
               <Sparkles size={32} />
             </div>
             <h2>STEP AI Assistant</h2>
-            <p>Your intelligent guide to the AI economy</p>
+            <p>Your intelligent guide to the Academia–Industry Collaboration Portal</p>
           </div>
 
           {messages.map((msg) => (
@@ -138,7 +138,7 @@ const AiChat = () => {
             <input
               type="text"
               className="chat-input"
-              placeholder="Ask about AI jobs, interview tips, or career paths..."
+              placeholder="Ask about internships, skill gaps, FDPs, learning programs, or industry collaboration…"
               value={input}
               onChange={(e) => setInput(e.target.value)}
               disabled={isTyping}

@@ -1,4 +1,5 @@
-import { Search, Compass, Zap, Smartphone } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Search, Compass, Zap, Award, BookOpen, FileText } from 'lucide-react';
 import './Students.css';
 
 const Students = () => {
@@ -9,15 +10,16 @@ const Students = () => {
       {/* Hero Section */}
       <section className="students-hero container">
         <div className="hero-content animate-fade-in">
-          <div className="badge glass-panel" style={{borderColor: 'rgba(150, 46, 33, 0.3)', color: 'var(--secondary)'}}>For Job Seekers</div>
+          <div className="badge glass-panel" style={{borderColor: 'rgba(150, 46, 33, 0.3)', color: 'var(--secondary)'}}>For Students</div>
           <h1 className="hero-title">
-            Launch your career in the <span className="gradient-text">AI economy</span>
+            Assess your skills, get matched, <span className="gradient-text">build your career</span>
           </h1>
           <p className="hero-subtitle">
-            Get discovered by top employers, find entry-level AI roles, and access resources to build your skills.
+            Take a skill assessment, discover internships and live projects matched to your profile, and build a verified digital portfolio that speaks for you.
           </p>
           <div className="hero-actions">
-            <button className="btn-primary" style={{background: 'var(--secondary)'}}>Create your profile</button>
+            <Link to="/skill-assessment" className="btn-primary" style={{background: 'var(--secondary)'}}>Take Skill Assessment</Link>
+            <Link to="/learning-programs" className="btn-secondary">Browse Learning Programs</Link>
           </div>
         </div>
       </section>
@@ -26,14 +28,14 @@ const Students = () => {
       <section className="app-showcase container">
         <div className="glass-panel showcase-grid animate-fade-in" style={{animationDelay: '0.2s'}}>
           <div className="showcase-content">
-            <h2>Your career in your pocket</h2>
-            <p>Download the STEP app to discover jobs, get notifications from recruiters, and register for virtual events on the go.</p>
+            <h2>Your digital portfolio, always with you</h2>
+            <p>Your STEP Digital Portfolio is a verified record of your skills, certifications, projects, and internships — ready to share with any industry partner at a click.</p>
             <div className="store-buttons">
               <button className="store-btn glass-panel">
-                <Smartphone size={24} /> App Store
+                <FileText size={24} /> View Portfolio
               </button>
               <button className="store-btn glass-panel">
-                <Zap size={24} /> Google Play
+                <Award size={24} /> Add Certification
               </button>
             </div>
           </div>
@@ -43,15 +45,15 @@ const Students = () => {
               <div className="phone-screen">
                 <div className="mockup-header">
                   <div className="mockup-avatar"></div>
-                  <div className="mockup-title">Recommended Jobs</div>
+                  <div className="mockup-title">Matched Opportunities</div>
                 </div>
                 <div className="mockup-card">
-                  <div className="mockup-tag">AI Trainer</div>
-                  <div className="mockup-company">TechCorp Inc.</div>
+                  <div className="mockup-tag">ML Internship</div>
+                  <div className="mockup-company">Infosys Ltd.</div>
                 </div>
                 <div className="mockup-card">
-                  <div className="mockup-tag">Data Annotator</div>
-                  <div className="mockup-company">AI Systems</div>
+                  <div className="mockup-tag">Live Project</div>
+                  <div className="mockup-company">DRDO Research</div>
                 </div>
               </div>
             </div>
@@ -65,24 +67,38 @@ const Students = () => {
         <div className="features-grid">
           <div className="feature-card glass-panel">
             <div className="feature-icon-wrapper" style={{background: 'rgba(150, 46, 33, 0.1)', borderColor: 'rgba(150, 46, 33, 0.2)', color: 'var(--secondary)'}}>
-              <Compass size={28} />
+              <Award size={28} />
             </div>
-            <h3>Discover Opportunities</h3>
-            <p>Get personalized job recommendations based on your major, interests, and skills.</p>
+            <h3>Skill Assessment & Gap Analysis</h3>
+            <p>Complete domain-specific aptitude tests. Get a verified skill profile and see exactly which skills industry partners are looking for in your field.</p>
           </div>
           <div className="feature-card glass-panel">
             <div className="feature-icon-wrapper" style={{background: 'rgba(255, 212, 142, 0.1)', borderColor: 'rgba(255, 212, 142, 0.2)', color: 'var(--accent)'}}>
+              <Compass size={28} />
+            </div>
+            <h3>Discover Internships & Live Projects</h3>
+            <p>Get personalised recommendations for internships, apprenticeships, and live projects matched to your skill profile and academic background.</p>
+          </div>
+          <div className="feature-card glass-panel">
+            <div className="feature-icon-wrapper">
+              <BookOpen size={28} className="feature-icon" />
+            </div>
+            <h3>Industry Learning Programs</h3>
+            <p>Enrol in certifications, workshops, and mentorship programs published by industry partners to close skill gaps before you apply.</p>
+          </div>
+          <div className="feature-card glass-panel">
+            <div className="feature-icon-wrapper" style={{background: 'rgba(150, 46, 33, 0.1)', borderColor: 'rgba(150, 46, 33, 0.2)', color: 'var(--secondary)'}}>
               <Zap size={28} />
             </div>
-            <h3>Stand Out</h3>
-            <p>Build a rich profile that showcases your coursework, projects, and extracurriculars.</p>
+            <h3>Digital Portfolio</h3>
+            <p>Build a rich, institution-verified portfolio showcasing your skills, certifications, projects, and internship history — the modern alternative to a resume.</p>
           </div>
           <div className="feature-card glass-panel">
             <div className="feature-icon-wrapper">
               <Search size={28} className="feature-icon" />
             </div>
-            <h3>Connect with Employers</h3>
-            <p>Message recruiters directly, attend virtual career fairs, and participate in employer events.</p>
+            <h3>Connect with Industry Mentors</h3>
+            <p>Interact directly with industry mentors, attend workshops and guest lectures, and participate in innovation challenges hosted by partner companies.</p>
           </div>
         </div>
       </section>
@@ -91,3 +107,4 @@ const Students = () => {
 };
 
 export default Students;
+

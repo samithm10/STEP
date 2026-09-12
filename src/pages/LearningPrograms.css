@@ -1,0 +1,141 @@
+.learning-programs-page {
+  min-height: 100vh;
+  padding-top: 100px;
+  padding-bottom: 80px;
+}
+
+.lp-hero {
+  padding: 60px 0 40px;
+  text-align: center;
+}
+
+.lp-filters {
+  padding: 0 0 32px;
+}
+
+.filter-tabs {
+  display: inline-flex;
+  gap: 4px;
+  padding: 6px;
+  border-radius: 14px;
+  flex-wrap: wrap;
+}
+
+.filter-tab {
+  padding: 8px 20px;
+  border-radius: 10px;
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.filter-tab:hover {
+  color: var(--text-primary);
+  background: rgba(255,255,255,0.05);
+}
+
+.filter-tab.active {
+  background: var(--primary);
+  color: white;
+}
+
+.lp-grid {
+  padding-bottom: 60px;
+}
+
+.programs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.program-card {
+  padding: 24px;
+  border-radius: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: transform 0.2s ease;
+}
+
+.program-card:hover {
+  transform: translateY(-4px);
+}
+
+.program-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.program-badge-emoji {
+  font-size: 28px;
+}
+
+.program-type-badge {
+  padding: 4px 12px;
+  border-radius: 50px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.type-certification { background: rgba(99,102,241,0.15); color: var(--primary); border: 1px solid rgba(99,102,241,0.3); }
+.type-workshop { background: rgba(255,212,142,0.15); color: var(--accent); border: 1px solid rgba(255,212,142,0.3); }
+.type-mentorship { background: rgba(52,211,153,0.15); color: #34d399; border: 1px solid rgba(52,211,153,0.3); }
+.type-fdp { background: rgba(248,113,113,0.15); color: #f87171; border: 1px solid rgba(248,113,113,0.3); }
+
+.program-title {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.program-partner {
+  font-size: 13px;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.program-meta {
+  display: flex;
+  gap: 16px;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.program-meta span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.program-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.program-cta {
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 14px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .filter-tabs { width: 100%; justify-content: flex-start; overflow-x: auto; }
+  .programs-grid { grid-template-columns: 1fr; }
+}

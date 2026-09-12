@@ -1,32 +1,57 @@
-# React + TypeScript + Vite
+# STEP — Academia–Industry Collaboration Portal
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+**STEP** (Skill, Training & Engagement Portal) is a Smart India Hackathon (SIH) project — a centralized platform connecting **Students**, **Industry Partners**, **Academicians**, and **Institutions**.
 
-Currently, two official plugins are available:
+## Core Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+| Feature | Description |
+|---|---|
+| **Skill Assessment** | Multi-step domain questionnaire generating a verified skill profile and gap analysis |
+| **Internships & Live Projects** | Industry posts skill-tagged opportunities; students get matched recommendations |
+| **Industry Learning Programs** | Certifications, workshops, FDPs, and mentorship initiatives by industry partners |
+| **Academician Portal** | Faculty browse FDPs, industrial training, consultancy, and research collaboration |
+| **Institution Dashboard** | Analytics on student skill development, internship participation, placement readiness |
+| **Digital Portfolio** | Verified student record of skills, certifications, projects, and internship history |
+| **STEP AI** | AI assistant for students (skill gaps), academicians (FDPs), and industry (postings) |
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Frontend**: React 19 + TypeScript + Vite
+- **Auth**: Firebase Authentication
+- **AI**: Groq (LLM chat assistant)
+- **Styling**: Vanilla CSS with glassmorphism design system
 
-## Expanding the Oxlint configuration
+## Getting Started
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```bash
+npm install
+cp .env.local.example .env.local   # add your Firebase + Groq keys
+npm run dev
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+## Routes
+
+| Route | Page |
+|---|---|
+| `/` | Home — three-audience landing |
+| `/students` | Student portal |
+| `/academicians` | Academician portal (FDPs, research) |
+| `/industry` | Industry Partner portal |
+| `/institution` | Institution analytics dashboard |
+| `/skill-assessment` | Skill Assessment flow |
+| `/learning-programs` | Industry Learning Programs listing |
+| `/ai` | STEP AI assistant |
+
+## Environment Variables
+
+Copy `.env.local` and set:
+```
+VITE_FIREBASE_API_KEY=...
+VITE_FIREBASE_AUTH_DOMAIN=...
+VITE_FIREBASE_PROJECT_ID=...
+VITE_FIREBASE_STORAGE_BUCKET=...
+VITE_FIREBASE_MESSAGING_SENDER_ID=...
+VITE_FIREBASE_APP_ID=...
+VITE_GROQ_API_KEY=...
+```
+

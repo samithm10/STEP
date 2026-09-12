@@ -1,0 +1,110 @@
+.academicians-page {
+  min-height: 100vh;
+  padding-top: 100px;
+}
+
+.academicians-hero {
+  padding: 80px 0 60px;
+  text-align: center;
+}
+
+.academicians-hero .hero-content {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.academicians-hero .badge {
+  display: inline-block;
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 24px;
+}
+
+.academicians-listings {
+  padding: 60px 0;
+}
+
+.opportunity-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.opportunity-card {
+  padding: 24px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.opportunity-card:hover {
+  transform: translateY(-4px);
+}
+
+.opp-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.opp-type-badge {
+  background: rgba(99, 102, 241, 0.15);
+  color: var(--primary);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  padding: 4px 12px;
+  border-radius: 50px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.opp-mode {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.opp-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.4;
+}
+
+.opp-partner {
+  font-size: 13px;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.opp-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.opp-btn {
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  width: 100%;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .opportunity-grid {
+    grid-template-columns: 1fr;
+  }
+}

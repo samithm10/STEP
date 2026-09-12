@@ -33,7 +33,7 @@ const Login = () => {
       <div className="auth-container animate-fade-in">
         <div className="auth-header">
           <h1 className="auth-title">Welcome back</h1>
-          <p className="auth-subtitle">Log in to your STEP account</p>
+          <p className="auth-subtitle">Log in to your STEP portal account</p>
         </div>
 
         {error && <div className="error-message">{error}</div>}

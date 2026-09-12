@@ -4,7 +4,15 @@ import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
 import { auth } from '../config/firebase';
 import './Auth.css';
 
+const ROLES = [
+  { id: 'student', label: 'Student', desc: 'Find internships, assess skills & build your portfolio' },
+  { id: 'academician', label: 'Academician', desc: 'Explore FDPs, consultancy & research collaboration' },
+  { id: 'industry', label: 'Industry Partner', desc: 'Post internships, projects & learning programs' },
+  { id: 'institution', label: 'Institution', desc: 'Monitor student progress & placement analytics' },
+];
+
 const Signup = () => {
+  const [role, setRole] = useState('');
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -19,7 +27,8 @@ const Signup = () => {
 
     try {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-      await updateProfile(userCredential.user, { displayName: name });
+      // Role is prefixed to displayName as a temporary store (until Firestore roles are implemented)
+      await updateProfile(userCredential.user, { displayName: role ? `[${role}] ${name}` : name });
       
       setLoading(false);
       navigate('/');
@@ -35,11 +44,38 @@ const Signup = () => {
       
       <div className="auth-container animate-fade-in">
         <div className="auth-header">
-          <h1 className="auth-title">Create an account</h1>
-          <p className="auth-subtitle">Join STEP to find your next opportunity</p>
+          <h1 className="auth-title">Join STEP</h1>
+          <p className="auth-subtitle">Create your account on the Academia–Industry Collaboration Portal</p>
         </div>
 
         {error && <div className="error-message">{error}</div>}
+
+        {/* Role Selector */}
+        <div className="form-group">
+          <label className="form-label">I am a…</label>
+          <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px', marginTop: '8px'}}>
+            {ROLES.map(r => (
+              <button
+                key={r.id}
+                type="button"
+                onClick={() => setRole(r.id)}
+                style={{
+                  padding: '10px 12px',
+                  borderRadius: '10px',
+                  border: `2px solid ${role === r.id ? 'var(--primary)' : 'rgba(255,255,255,0.1)'}`,
+                  background: role === r.id ? 'rgba(99,102,241,0.15)' : 'rgba(255,255,255,0.03)',
+                  color: 'var(--text-primary)',
+                  cursor: 'pointer',
+                  textAlign: 'left',
+                  transition: 'all 0.2s'
+                }}
+              >
+                <div style={{fontWeight: 600, fontSize: '13px'}}>{r.label}</div>
+                <div style={{fontSize: '11px', color: 'var(--text-secondary)', marginTop: '2px'}}>{r.desc}</div>
+              </button>
+            ))}
+          </div>
+        </div>
 
         <form className="auth-form" onSubmit={handleSignup}>
           <div className="form-group">

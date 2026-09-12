@@ -28,9 +28,10 @@ const Navbar = () => {
         </div>
 
         <nav className={`nav-links ${isMobileMenuOpen ? 'mobile-open' : ''}`}>
-          <Link to="/employers" className="nav-link">Employers</Link>
-          <Link to="/students" className="nav-link">Job Seekers</Link>
-          <Link to="/career-centers" className="nav-link">Career Centers</Link>
+          <Link to="/students" className="nav-link">Students</Link>
+          <Link to="/academicians" className="nav-link">Academicians</Link>
+          <Link to="/industry" className="nav-link">Industry Partners</Link>
+          <Link to="/institution" className="nav-link">Institutions</Link>
           <Link to="/ai" className="nav-link">STEP AI</Link>
           <div className="nav-actions mobile-only">
             {currentUser ? (
@@ -90,3 +91,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
